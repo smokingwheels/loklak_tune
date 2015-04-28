@@ -3,7 +3,7 @@ TIMER ON
 ON TIMER(1) GOSUB health
 REM works in windows QB64 with URL2File only not sure about URL2File in Linux
 REM Must have program URL2File on windows
-REM Will incorprate timed load tester with other search varibles later on.  
+REM Will incorprate timed load tester with other search varibles later on.
 
 REM File to log speed of peer for complete RSS output.
 OPEN "c:\qb\loklak\speed.csv" FOR OUTPUT AS #1
@@ -15,11 +15,14 @@ REM   Drive   :          \        dir      \          dir          \          ex
 REM swlok1.mooo
 'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok1.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM swlok2.mooo
-a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok2.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok2.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM swlok3.mooo
-'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok3.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok3.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM swlok4.mooo
-a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok4.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok4.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+REM smokingwheels.mooo.com:9100
+'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "smokingwheels.mooo.com" + CHR$(58) + "9100" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+
 
 REM holycow
 'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "holycow.allesehersonerdshier.net" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
@@ -36,6 +39,11 @@ REM loklak.org
 index# = 0
 starttime# = TIMER
 PRINT " The URL I am using  "; a$
+PRINT " Please leave running for 150 records min."
+INPUT " Ping time to host Average mS 250 default"; a#
+IF a# = 0 THEN a# = 250
+ping# = a# / 1000
+
 
 DO UNTIL INKEY$ = CHR$(27)
 
@@ -44,7 +52,7 @@ DO UNTIL INKEY$ = CHR$(27)
 
     REM rollover midnight
     IF eltime# < 0 THEN starttime# = TIMER
-    IF eltime# > starttime# + 10 THEN
+    IF eltime# > starttime# + 12 THEN
         IF INKEY$ = CHR$(27) THEN GOTO shutdown
         starttime# = TIMER
 
@@ -67,8 +75,14 @@ END
 
 health:
 LOCATE 7, 1
-PRINT " Average time "; tottime# / index#; "          "
-PRINT " Number of records "; index#; "        "
+PRINT " Average time         "; tottime# / index#; "          "
+PRINT " Number of records    "; index#; "        "
+PRINT
+PRINT " config.properties Settings Recommended "
+PRINT
+PRINT " Using ping of "; ping#; "seconds"; "       "
+PRINT " DoS.blackout         "; INT(((tottime# / index#) + .8 - ping#) * 100); "         "
+PRINT " DoS.servicereduction "; INT(((tottime# / index#) + .8 - ping#) * 1000); "         "
 RETURN
 
 
