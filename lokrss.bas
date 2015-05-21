@@ -17,7 +17,7 @@ REM swlok1.mooo
 REM swlok2.mooo
 'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok2.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM swlok3.mooo
-a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok3.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok3.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM swlok4.mooo
 'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "swlok4.mooo.com" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM smokingwheels.mooo.com:9100
@@ -31,7 +31,7 @@ REM smokingwheels.mooo
 REM loklak.org:9100
 'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "loklak.org" + CHR$(58) + "9100" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 REM loklak.org
-'a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "loklak.org" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
+a$ = "c" + CHR$(58) + CHR$(92) + "qb" + CHR$(92) + "url2file" + CHR$(92) + "url2file.exe " + CHR$(34) + "http" + CHR$(58) + CHR$(47) + CHR$(47) + "loklak.org" + CHR$(47) + "api" + CHR$(47) + "search.rss" + CHR$(63) + "timezoneOffset=-480" + CHR$(38) + "q" + "=" + "youtube" + CHR$(34) + " loklak" + "youtube" + ".txt"
 
 
 
@@ -52,7 +52,7 @@ DO UNTIL INKEY$ = CHR$(27)
 
     REM rollover midnight
     IF eltime# < 0 THEN starttime# = TIMER
-    IF eltime# > starttime# + 12 THEN
+    IF eltime# > starttime# + 7 THEN
         IF INKEY$ = CHR$(27) THEN GOTO shutdown
         starttime# = TIMER
 
